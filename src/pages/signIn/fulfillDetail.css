@@ -1,0 +1,19 @@
+.detail-container{
+  position: relative;
+  min-height: 400px;
+}
+.detail-container img{
+  width: 120%;
+  position: absolute;
+
+}
+.detail-container .form-container{
+  width: 600px;
+  min-height: 400px ;
+  text-align: center;
+  padding: 110px 50px 50px;
+  margin: 0 auto;
+  position: relative;
+  background: rgba(250,250,250,0.7);
+
+}

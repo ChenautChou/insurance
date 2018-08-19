@@ -1,0 +1,22 @@
+.order-container{
+  position: relative;
+  min-height: 400px;
+}
+.order-container img{
+  width: 120%;
+  position: absolute;
+
+}
+.order-container .form-container{
+  width: 1000px;
+  min-height: 400px ;
+  text-align: center;
+  padding: 110px 50px 50px;
+  position: relative;
+  background: rgba(250,250,250,0.7);
+  margin-left:100px ;
+  box-shadow: 4px 0px 20px 8px #ffffffa8;
+}
+.order-container .ant-form-item-control-wrapper{
+  width: 25%;
+}

@@ -1,0 +1,63 @@
+
+.App {
+  text-align: center;
+  overflow: hidden;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.content-container {
+  min-height: 300px;
+  position: relative;
+
+}
+.content-container img {
+  width: 100%;
+  position: absolute;
+}
+.content-container .main-content{
+  position: relative;
+  width: 500px;
+  padding: 150px 0;
+  margin: 0 auto;
+}
+.content-container .main-content a{
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.bottom-bordered-col{
+  width: 25%;
+  display: inline-block;
+  min-height: 250px;
+  float: left;
+}
+.logo{
+  float: left;
+  font-family: "Apple SD Gothic Neo";
+  font-weight: bold;
+  font-size: 32px;
+}
