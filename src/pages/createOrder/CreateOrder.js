@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './createOrder.css';
+import './createOrder.less';
 
 
 import { Layout} from 'antd';

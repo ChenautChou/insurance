@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './fulfillDetail.css';
+import './fulfillDetail.less';
 
 
 import { Layout} from 'antd';

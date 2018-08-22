@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './signIn.css';
+import './signIn.less';
 
 
 import { Layout, Input,Button, Icon} from 'antd';

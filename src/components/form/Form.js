@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;
@@ -42,7 +43,7 @@ class NormalLoginForm extends React.Component {
                     <Button size="large" type="primary" htmlType="submit" className="login-form-button" block>
                         登   录
                     </Button>
-                    <a href="">现在注册</a>
+                    <Link  to="">现在注册</Link>
                 </FormItem>
             </Form>
         );
