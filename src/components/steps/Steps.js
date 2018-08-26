@@ -12,9 +12,9 @@ export default class CommonSteps extends React.Component {
         return (
             <div className="steps-wrapper" >
                 <Steps progressDot current={this.props.current}>
-                    <Step title="登录" />
+                    <Step title="查询" />
                     <Step title="完善个人信息"/>
-                    <Step title="完善慢病信息"/>
+                    <Step title="定制保单"/>
                 </Steps>
             </div>
         )

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './createOrder.less';
 
 
-import { Layout} from 'antd';
+import { Layout, Row} from 'antd';
 import {withRouter} from "react-router-dom";
 import CommonHeader from "../../components/header/CommonHeader";
 import CommonFooter from "../../components/footer/CommonFooter";

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 
 import App from './pages/index/App';
 import SignIn from './pages/signIn/SignIn';
@@ -14,7 +14,7 @@ function home() {
 }
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <Switch>
             <Route exact path='/' component={App}></Route>
             <Route path='/signin' component={SignIn}></Route>
@@ -22,7 +22,7 @@ ReactDOM.render(
             <Route path='/order' component={CreateOrder}></Route>
 
         </Switch>
-    </BrowserRouter>
+    </HashRouter>
     ,
     document.getElementById('root')
 );

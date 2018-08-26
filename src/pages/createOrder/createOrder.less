@@ -1,22 +1,49 @@
 .order-container{
   position: relative;
+  overflow: hidden;
   min-height: 400px;
+  .form-container{
+    width: 1204px;
+    min-height: 400px ;
+    text-align: center;
+    padding: 40px 100px 0 ;
+    position: relative;
+    .ant-input-number{
+      width: 60px;
+    }
+    .tri-col-wrapper{
+      text-align: left;
+      .ant-form-item-label{
+        width: 100px;
+      }
+      .ant-form-item-control-wrapper{
+        width: 150px;
+      }
+    }
+    .bi-col-wrapper{
+      text-align: left;
+      .ant-form-item-label{
+        width: 180px;
+      }
+      .ant-form-item-control-wrapper{
+        width: 80px;
+
+      }
+    }
+    .ant-row.ant-form-item {
+      display: inline-block;
+    }
+    .ant-form-item-control-wrapper{
+      display: inline-block;
+      margin-right: 20px;
+
+    }
+
+
+  }
 }
 .order-container img{
-  width: 120%;
   position: absolute;
+  opacity: 0.7;
+}
 
-}
-.order-container .form-container{
-  width: 1000px;
-  min-height: 400px ;
-  text-align: center;
-  padding: 110px 50px 50px;
-  position: relative;
-  background: rgba(250,250,250,0.7);
-  margin-left:100px ;
-  box-shadow: 4px 0px 20px 8px #ffffffa8;
-}
-.order-container .ant-form-item-control-wrapper{
-  width: 25%;
-}

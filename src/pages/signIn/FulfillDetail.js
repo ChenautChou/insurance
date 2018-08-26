@@ -21,7 +21,6 @@ class FulfillDetail extends Component {
         super(props);
     }
 
-
     render() {
         return (
             <Layout>

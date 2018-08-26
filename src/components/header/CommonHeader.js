@@ -28,7 +28,7 @@ export default class CommonHeader extends React.Component {
                             :
                             <Menu.Item key="1"><Link to={'/signIn'}>登录/注册</Link></Menu.Item>
                     }
-                    <Menu.Item key="2">我的订单</Menu.Item>
+                    <Menu.Item key="2"><Link to={'/order'}>我的订单</Link></Menu.Item>
                     <Menu.Item key="3">我的团险</Menu.Item>
                     <Menu.Item key="4">关于我们</Menu.Item>
                 </Menu>

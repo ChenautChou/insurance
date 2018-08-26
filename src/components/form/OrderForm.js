@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Row, Col, DatePicker, InputNumber } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -7,84 +7,54 @@ class NormalLoginForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            formLayout: 'horizontal',
         };
     }
 
 
     render() {
         const { formLayout } = this.state;
-        const formItemLayout = formLayout === 'horizontal' ? {
-            labelCol: { span: 4 },
-            wrapperCol: { span: 14 },
-        } : null;
-        const buttonItemLayout = formLayout === 'horizontal' ? {
-            wrapperCol: { span: 14, offset: 4 },
-        } : null;
         return (
-            <Form onSubmit={this.handleSubmit} layout={formLayout} className="login-form">
-                <FormItem
-                    label="投保开始日期："
-                    {...formItemLayout}
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="投保人数："
-                    {...formItemLayout}
+            <Form onSubmit={this.handleSubmit}  className="login-form">
+                <div className="tri-col-wrapper">
+                    <FormItem label="慢病系统：">
+                        <Input placeholder="慢病系统" />
+                    </FormItem>
+                    <FormItem label="慢病类别：">
+                        <Input placeholder="慢病类别" />
+                    </FormItem>
+                    <FormItem label="慢病名称：">
+                        <Input placeholder="慢病名称" />
+                    </FormItem>
+                </div>
+                <div className="tri-col-wrapper">
+                    <FormItem label="投保开始日期：">
+                        <DatePicker onChange={this.handleBirthDate} placeholder="选择..."  />
+                    </FormItem>
+                    <FormItem label="住院审核选择：">
+                        <Input placeholder="住院审核" />
+                    </FormItem>
+                    <FormItem label="投保人数：">
+                        <InputNumber min={1} max={20} defaultValue={1} onChange={this.crutialHos} />
+                    </FormItem>
+                </div>
+                <div className="tri-col-wrapper">
+                    <FormItem label="免赔金额：">
+                        <Input placeholder="免赔金额" />
+                    </FormItem>
+                    <FormItem label="共付比例：">
+                        <Input placeholder="共付比例" />
+                    </FormItem>
+                </div>
+                <div className="bi-col-wrapper">
 
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="免赔金额："
-                    {...formItemLayout}
+                    <FormItem label="慢病过去一年住院次数：">
+                        <InputNumber min={0} max={20} defaultValue={0} onChange={this.crutialHos} />
+                    </FormItem>
+                    <FormItem label="其他疾病过去一年住院次数：">
+                        <InputNumber min={0} max={20} defaultValue={0} onChange={this.crutialHos} />
+                    </FormItem>
 
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="共付比例："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="住院审核选择："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="慢病系统："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="慢病名称："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="慢病过去一年住院次数："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
-                <FormItem
-                    label="其他疾病过去一年住院次数："
-                    {...formItemLayout}
-
-                >
-                    <Input placeholder="input placeholder" />
-                </FormItem>
+                </div>
                 <FormItem>
                     <Button size="large" type="primary" htmlType="submit" className="login-form-button" block>
                         保费计算

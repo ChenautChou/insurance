@@ -49,9 +49,7 @@ class NormalDetailForm extends React.Component {
                     birthDate: this.birthDate
                 }
                 sessionStorage.setItem("detail",JSON.stringify(params))
-
-
-                console.log('Received values of form: ', values);
+                window.location.href = '#/order';
             }
         });
     }
@@ -90,7 +88,7 @@ class NormalDetailForm extends React.Component {
                     label="所在地市："
                     {...formItemLayout}
                 >
-                    <Cascader options={options} onChange={this.handleAddr} placeholder="请输入所在地市" />
+                    <Cascader options={options} style={{"textAlign":"left"}} onChange={this.handleAddr} placeholder="请输入所在地市" />
                 </FormItem>
                 <FormItem
                     label="性别："
