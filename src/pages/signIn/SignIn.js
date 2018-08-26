@@ -14,6 +14,8 @@ const {Content } = Layout;
 
 
 
+const {Content} = Layout;
+
 
 class SignIn extends Component {
 
@@ -59,8 +61,9 @@ class SignIn extends Component {
                 </Content>
                 <CommonFooter />
             </Layout>
+
         );
-      }
+  }
 }
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import {Link} from 'react-router-dom';
+import {Form, Icon, Input, Button, Checkbox} from 'antd';
 
 import {signIn} from "../../actions/signInAction";
 
@@ -20,7 +21,7 @@ class NormalLoginForm extends React.Component {
 
                 console.log('Received values of form: ', values);
             }
-        });
+        };
     }
 
     render() {
@@ -55,7 +56,7 @@ class NormalLoginForm extends React.Component {
                 </FormItem>
             </Form>
         );
-    }
+  }
 }
 export const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 

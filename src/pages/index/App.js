@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.less';
+
 import {withRouter} from "react-router-dom";
 
 
@@ -46,6 +47,8 @@ class App extends Component {
     }
 
     componentDidMount() {
+      debugger;
+      console.log(this.props.location.query.id || "1");
         this.setState({
             options:[{
                 value: 'zhejiang',
