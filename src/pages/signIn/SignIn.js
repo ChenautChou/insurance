@@ -10,10 +10,6 @@ import {WrappedNormalLoginForm} from "../../components/form/LoginForm";
 import {WrappedNormalSignUpForm} from "../../components/form/SignUpForm";
 
 
-const {Content } = Layout;
-
-
-
 const {Content} = Layout;
 
 

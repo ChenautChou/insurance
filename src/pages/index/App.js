@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.less';
+import './app.less';
 
 import {withRouter} from "react-router-dom";
 
