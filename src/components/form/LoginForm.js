@@ -1,16 +1,26 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
+import {signIn} from "../../actions/signInAction";
+
 const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
     handleSubmit = (e) => {
-        /*e.preventDefault();
+        e && e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                const params = {
+                    mobile: values[0],
+                    password: values[1]
+                }
+                signIn(params).then(() => {
+
+                });
+
                 console.log('Received values of form: ', values);
             }
-        });*/
+        });
     }
 
     render() {
@@ -18,15 +28,15 @@ class NormalLoginForm extends React.Component {
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
-                    {getFieldDecorator('userName', {
-                        rules: [{ required: true, message: 'Please input your username!' }],
+                    {getFieldDecorator('mobile', {
+                        rules: [{ required: true, message: '请输入您的手机号' }],
                     })(
-                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} size="large" placeholder="请输入手机号" />
+                        <Input prefix={<Icon type="mobile" style={{ color: 'rgba(0,0,0,.25)' }} />} size="large" placeholder="请输入手机号" />
                     )}
                 </FormItem>
                 <FormItem>
                     {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }],
+                        rules: [{ required: true, message: '请输入正确的登录密码' }],
                     })(
                         <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} size="large" type="password" placeholder="请输入登录密码" />
                     )}
@@ -39,10 +49,9 @@ class NormalLoginForm extends React.Component {
                         <Checkbox>Remember me</Checkbox>
                     )}*/}
                     {/*<a className="login-form-forgot" href="">Forgot password</a>*/}
-                    <Button size="large" type="primary" htmlType="submit" className="login-form-button" block>
+                    <Button size="large" type="primary" htmlType="submit" className="login-form-button" block onClick={this.handleSubmit}>
                         登   录
                     </Button>
-                    <a href="">现在注册</a>
                 </FormItem>
             </Form>
         );

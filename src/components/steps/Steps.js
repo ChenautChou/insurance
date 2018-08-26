@@ -1,6 +1,6 @@
 import React from 'react';
 import { Steps, Icon } from 'antd';
-import './steps.css';
+import './steps.less';
 
 const Step = Steps.Step;
 

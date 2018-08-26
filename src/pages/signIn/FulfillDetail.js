@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './fulfillDetail.css';
+import './fulfillDetail.less';
 
 
 import { Layout} from 'antd';
 import {withRouter} from "react-router-dom";
 import CommonHeader from "../../components/header/CommonHeader";
 import CommonFooter from "../../components/footer/CommonFooter";
-import {WrappedNormalLoginForm} from "../../components/form/DetailForm";
+import {WrappedNormalDetailForm} from "../../components/form/DetailForm";
 import CommonSteps from "../../components/steps/Steps";
 
 
@@ -31,7 +31,7 @@ class FulfillDetail extends Component {
                     <div className="detail-container">
                         <img src={require('../../assets/img3.jpg')} />
                         <div className="form-container">
-                            <WrappedNormalLoginForm />
+                            <WrappedNormalDetailForm />
                         </div>
                     </div>
                 </Content>

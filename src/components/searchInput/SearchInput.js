@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import { Select,Button } from 'antd';
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
+import {fuzzyQuery, checkUserInfo}  from '../../actions/indexAction';
 
 const Option = Select.Option;
 
 let timeout;
 let currentValue;
 
+// 输入即调用
 function fetch(value, callback) {
     if (timeout) {
         clearTimeout(timeout);
@@ -17,20 +19,18 @@ function fetch(value, callback) {
     currentValue = value;
 
     function fake() {
-        const str = querystring.encode({
-            code: 'utf-8',
-            q: value,
-        });
-        jsonp(`https://suggest.taobao.com/sug?${str}`)
-            .then(response => response.json())
-            .then((d) => {
+        const str = {
+            codeDesc: value,
+        };
+        fuzzyQuery(str)
+            .then((res) => {
                 if (currentValue === value) {
-                    const result = d.result;
+                    const result = res.retDat && res.retDat.refCodeDescList || [];
                     const data = [];
                     result.forEach((r) => {
                         data.push({
-                            value: r[0],
-                            text: r[0],
+                            value: r.did,
+                            text: r.codeDesc,
                         });
                     });
                     callback(data);
@@ -55,6 +55,12 @@ export default class SearchInput extends React.Component {
         this.setState({ value });
     }
 
+    handleClick = () => {
+        sessionStorage.setItem("disease", this.state.value);
+        //查询用户信息 如果未登录拉登录，如果登录查询用户详细信息，没有有详细信息补充，有详细信息带入订单页
+
+    }
+
     render() {
         const options = this.state.data.map(d => <Option key={d.value}>{d.text}</Option>);
         return (
@@ -76,7 +82,7 @@ export default class SearchInput extends React.Component {
             >
                 {options}
             </Select>
-            <Button type="primary" size="large" style={{"marginLeft":"5px"}}>查找</Button>
+            <Button type="primary" size="large" style={{"marginLeft":"5px"}} onClick={this.handleClick}>查找</Button>
             </div>
 
         );

@@ -16,8 +16,7 @@ function home() {
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route exact path='/'  component={home} ></Route>
-            <Route path='/index' component={App}></Route>
+            <Route exact path='/' component={App}></Route>
             <Route path='/signin' component={SignIn}></Route>
             <Route path='/detail' component={FulfillDetail}></Route>
             <Route path='/order' component={CreateOrder}></Route>

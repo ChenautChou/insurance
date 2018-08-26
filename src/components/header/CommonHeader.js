@@ -24,7 +24,7 @@ export default class CommonHeader extends React.Component {
                 >
                     {
                         this.props.isLogin ?
-                            <Menu.Item key="1"><Link to={'/index'}>首页</Link></Menu.Item>
+                            <Menu.Item key="1"><Link to={'/'}>首页</Link></Menu.Item>
                             :
                             <Menu.Item key="1"><Link to={'/signIn'}>登录/注册</Link></Menu.Item>
                     }
